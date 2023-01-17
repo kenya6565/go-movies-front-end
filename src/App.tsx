@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
             </div>
           </nav>
         </div>
-        <div className="col-md-10"></div>
+        <div className="col-md-10">
+          <Home />
+        </div>
       </div>
     </div>
   );
