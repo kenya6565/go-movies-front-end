@@ -12,6 +12,22 @@ function App() {
             <span className="badge bg-success">Login</span>
           </a>
         </div>
+        <hr className="md-3" />
+      </div>
+      <div className="row">
+        <div className="col-md-2">
+          <nav>
+            <div className="list-group">
+              <a href="" className="list-group-item list-group-item-action">
+                Home
+              </a>
+              <a href="" className="list-group-item list-group-item-action">
+                Movie
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div className="col-md-10"></div>
       </div>
     </div>
   );
