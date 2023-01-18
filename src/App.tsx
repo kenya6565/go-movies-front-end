@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./components/Home";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
           </nav>
         </div>
         <div className="col-md-10">
-          <Home />
+          <Outlet />
         </div>
       </div>
     </div>
