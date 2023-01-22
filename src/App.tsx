@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 function App() {
@@ -66,8 +66,11 @@ function App() {
             </div>
           </nav>
         </div>
+        {/* pass useState variable */}
         <div className="col-md-10">
-          <Outlet />
+          <Outlet context={{
+            jwtToken, setJwtToken
+          }} />
         </div>
       </div>
     </div>
