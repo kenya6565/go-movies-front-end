@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MoviesList } from "../interfaces/movie";
 
-type MoviesList = {
-  id: number;
-  title: string;
-  release_date: string;
-  runtime: number;
-  mpaa_rating: string;
-  description: string;
-};
+
 
 const Movies = () => {
   const [movies, setMovies] = useState<Array<MoviesList>>([]);
