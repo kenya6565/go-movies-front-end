@@ -26,7 +26,7 @@ const Login = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("email/password", email, password);
-    if (email === "admin.example.com") {
+    if (email === "admin@example.com") {
       setJwtToken("abc");
       setAlertClassName("d-none");
       setAlertMessage("");

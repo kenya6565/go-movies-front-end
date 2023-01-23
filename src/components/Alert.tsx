@@ -1,9 +1,16 @@
 import React from "react";
 
-const Alert = (props) => {
+type ErrAlert = {
+  className: string;
+  message: string;
+};
+
+const Alert = (props: ErrAlert) => {
+  const { className, message } = props;
+
   return (
-    <div className={"alert " + props.className} role="alert">
-      {props.message}
+    <div className={"alert " + className} role="alert">
+      {message}
     </div>
   );
 };

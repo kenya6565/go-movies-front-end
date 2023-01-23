@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
-import { Input } from "../../interfaces/input";
+import { InputComponent } from "../../interfaces/input";
 
-const Input = forwardRef((props: Input, ref) => {
+const Input = forwardRef((props: InputComponent, ref) => {
   return (
     <div className="mb-3">
       <label htmlFor={props.name} className="form-label">
@@ -11,13 +11,13 @@ const Input = forwardRef((props: Input, ref) => {
         type={props.type}
         className={props.className}
         id={props.name}
-        ref={ref}
-        placeholder={props.placeholder}
+        // ref={ref}
+        // placeholder={props.placeholder}
         onChange={props.onChange}
         autoComplete={props.autoComplete}
-        value={props.value}
+        // value={props.value}
       />
-      <div className={props.errorDiv}>{props.errorMsg}</div>
+      {/* <div className={props.errorDiv}>{props.errorMsg}</div> */}
     </div>
   );
 });

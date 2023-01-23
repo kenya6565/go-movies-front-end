@@ -1,4 +1,4 @@
-export type Input = {
+export type InputComponent = {
   title: string;
   type: string;
   className: string;
