@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import Input from "./form/Input";
 
 const Login = () => {
@@ -7,40 +7,38 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   // get value from Outlet
-  const {
-    jwtToken,
-    setJwtToken,
-  }: { jwtToken: string; setJwtToken: (jwtToken: string) => void } =
+  const { setJwtToken }: { setJwtToken: (jwtToken: string) => void } =
     useOutletContext();
 
   const {
-    alertClassName,
-    setalAlertClassName,
-  }: {
-    alertClassName: string;
-    setalAlertClassName: (alertClassName: string) => void;
-  } = useOutletContext();
+    setAlertClassName,
+  }: { setAlertClassName: (alertClassName: string) => void } =
+    useOutletContext();
 
   const {
-    alertMessage,
-    setalAlertMessage,
+    setAlertMessage,
   }: {
-    alertMessage: string;
-    setalAlertMessage: (alertMessage: string) => void;
+    setAlertMessage: (alertMessage: string) => void;
   } = useOutletContext();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("email/password", email, password);
     if (email === "admin.example.com") {
       setJwtToken("abc");
-      setalAlertClassName("d-none");
-      setalAlertMessage("");
+      setAlertClassName("d-none");
+      setAlertMessage("");
+
+      // when successfully loggin in, redirecting root
+      navigate("/");
     } else {
-      setalAlertClassName("alert-danger");
-      setalAlertMessage("Invalid credentials");
+      setAlertClassName("alert-danger");
+      setAlertMessage("Invalid credentials");
     }
   };
+
   return (
     <div className="col-md-6 offset-md-3">
       <h2>Login</h2>
