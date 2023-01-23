@@ -13,11 +13,32 @@ const Login = () => {
   }: { jwtToken: string; setJwtToken: (jwtToken: string) => void } =
     useOutletContext();
 
+  const {
+    alertClassName,
+    setalAlertClassName,
+  }: {
+    alertClassName: string;
+    setalAlertClassName: (alertClassName: string) => void;
+  } = useOutletContext();
+
+  const {
+    alertMessage,
+    setalAlertMessage,
+  }: {
+    alertMessage: string;
+    setalAlertMessage: (alertMessage: string) => void;
+  } = useOutletContext();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("email/password", email, password);
     if (email === "admin.example.com") {
       setJwtToken("abc");
+      setalAlertClassName("d-none");
+      setalAlertMessage("");
+    } else {
+      setalAlertClassName("alert-danger");
+      setalAlertMessage("Invalid credentials");
     }
   };
   return (
