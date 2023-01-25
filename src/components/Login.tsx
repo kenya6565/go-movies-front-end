@@ -24,6 +24,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // prevent browser to reload as a default movement
     event.preventDefault();
     console.log("email/password", email, password);
     if (email === "admin@example.com") {
@@ -31,7 +32,7 @@ const Login = () => {
       setAlertClassName("d-none");
       setAlertMessage("");
 
-      // when successfully loggin in, redirecting root
+      // when successfully logging in, redirecting root
       navigate("/");
     } else {
       setAlertClassName("alert-danger");
